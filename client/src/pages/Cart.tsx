@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../store/redux_hooks/reduxHook";
 import { CartProductType } from "../types/types";
 import CartTable from "../Components/Cart/CartTable";
+import { host } from "../utils/host";
 
 const Cart = () => {
   const user = useAppSelector((state) => state.user);
@@ -11,7 +12,7 @@ const Cart = () => {
   const navigate = useNavigate();
   const getCartProduct = async () => {
     try {
-      const res = await fetch("/api/products/get/cart", {
+      const res = await fetch(`${host}/api/products/get/cart`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

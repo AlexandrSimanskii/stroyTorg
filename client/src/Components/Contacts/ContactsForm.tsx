@@ -11,6 +11,7 @@ import {
   ref,
   uploadBytesResumable,
 } from "firebase/storage";
+import { host } from "../../utils/host";
 
 const config = {
   apiKey: "AIzaSyCGu03ZGjhTbnMG1I72hJ-gsJJ1VmCHxDE",
@@ -88,7 +89,7 @@ const ContactsForm = ({ setReviews }: formProps) => {
 
   const handleFormSubmit = async (data: string[] | []) => {
     try {
-      const res = await fetch("/api/review/post", {
+      const res = await fetch(`${host}/api/review/post`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -2,6 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 
 import { useForm, SubmitHandler } from "react-hook-form";
+import { host } from "../../utils/host";
 
 type Inputs = {
   qurrentPassword: string;
@@ -35,7 +36,7 @@ const ChangePassword = ({ _id }: Props) => {
     console.log(data);
 
     try {
-      const res = await fetch(`/api/users/${_id}/password/update`, {
+      const res = await fetch(`${host}/api/users/${_id}/password/update`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

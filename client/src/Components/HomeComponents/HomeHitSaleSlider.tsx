@@ -5,13 +5,14 @@ import ProductCard from "../CardProduct/ProductCard";
 import { ProductType } from "../../types/types";
 
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import { host } from "../../utils/host";
 
 const HomeHitSaleSlider = () => {
   const [bestseller, setBestseller] = useState<ProductType[]>([]);
 
   const getBestsellerProduct = async () => {
     try {
-      const res = await fetch("/api/products/get?limit=12&startIndex=8");
+      const res = await fetch(`${host}/api/products/get?limit=12&startIndex=8`);
       const data = await res.json();
       setBestseller(data.products);
     } catch (error) {

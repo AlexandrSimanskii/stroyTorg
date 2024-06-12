@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { signInSuccessSlice } from "../../store/users/userSlise";
 import { useAppDispatch } from "../../store/redux_hooks/reduxHook";
+import { host } from "../../utils/host";
 type Inputs = {
   email: string;
   phone: string;
@@ -37,7 +38,7 @@ const RegisterForm = () => {
     try {
       const { confirmPassword, ...rest } = data;
 
-      const res = await fetch("/api/signup", {
+      const res = await fetch(`${host}/api/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -12,6 +12,7 @@ import { Link, useNavigate } from "react-router-dom";
 import InfoBlock from "../Components/InfoBlock/InfoBlock.tsx";
 import NewsComp from "../Components/News/NewsComp.tsx";
 import { useAppSelector } from "../store/redux_hooks/reduxHook.ts";
+import { host } from "../utils/host.ts";
 
 const Home = () => {
   const [betterProducts, setBetterProducts] = useState<ProductType[]>([]);
@@ -19,7 +20,7 @@ const Home = () => {
   const navigate = useNavigate();
   const getBetterProducts = async () => {
     try {
-      const res = await fetch("/api/products/get?limit=5&startIndex=15");
+      const res = await fetch(`${host}/api/products/get?limit=5&startIndex=15`);
       const data = await res.json();
       setBetterProducts(data.products);
     } catch (error) {

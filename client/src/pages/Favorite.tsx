@@ -13,6 +13,7 @@ import {
   addFavoriteInCartSlice,
 } from "../store/users/userSlise";
 import CardSkeleton from "../Components/CardProduct/CardSkeleton";
+import { host } from "../utils/host";
 
 const Favorite = () => {
   const [products, setProducts] = useState<ProductType[]>([]);
@@ -24,7 +25,7 @@ const Favorite = () => {
   const getFavoriteProducts = async () => {
     try {
       setLoading(true);
-      const res = await fetch(`api/products/favorite/get`, {
+      const res = await fetch(`${host}api/products/favorite/get`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -48,7 +49,7 @@ const Favorite = () => {
       try {
         setLoading(true);
 
-        const res = await fetch(`/api/users/${user._id}/favorites/delete`, {
+        const res = await fetch(`${host}/api/users/${user._id}/favorites/delete`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
@@ -78,7 +79,7 @@ const Favorite = () => {
         .map((item) => item);
 
       try {
-        const res = await fetch(`api/users/${user._id}/cart/addall`, {
+        const res = await fetch(`${host}api/users/${user._id}/cart/addall`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

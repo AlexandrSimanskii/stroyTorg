@@ -5,6 +5,7 @@ import { useAppDispatch } from "../store/redux_hooks/reduxHook";
 import { signInSuccessSlice } from "../store/users/userSlise";
 
 import { useForm, SubmitHandler } from "react-hook-form";
+import { host } from "../utils/host";
 
 type Inputs = {
   email: string;
@@ -29,7 +30,7 @@ const SignIn = () => {
     setLoading(true);
 
     try {
-      const res = await fetch("/api/signin", {
+      const res = await fetch(`${host}/api/signin`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

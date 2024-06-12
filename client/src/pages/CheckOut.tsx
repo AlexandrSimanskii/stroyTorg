@@ -4,6 +4,7 @@ import { updateUserOrder } from "../store/users/userSlise";
 import { useNavigate } from "react-router-dom";
 import { ProductOrderType, CartProductType } from "../types/types";
 import { useForm } from "react-hook-form";
+import { host } from "../utils/host";
 
 const Checkout = () => {
   const [productInCart, setProductInCart] = useState<CartProductType[]>([]);
@@ -39,7 +40,7 @@ const Checkout = () => {
 
   const fetchGetUserCartProducts = async () => {
     try {
-      const res = await fetch("/api/products/get/cart", {
+      const res = await fetch(`${host}/api/products/get/cart`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ product: user.cart }),
@@ -78,7 +79,7 @@ const Checkout = () => {
 
   const addOrders = async (data: ProductOrderType) => {
     try {
-      const res = await fetch(`api/users/${user._id}/update/order/`, {
+      const res = await fetch(`${host}api/users/${user._id}/update/order/`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ orders: data }),

@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { SortFilterPropsType,  } from "../../types/types";
+import { host } from "../../utils/host";
 
 const SortFilter = ({
   limit,
@@ -36,7 +37,7 @@ const SortFilter = ({
       setLimit(buttonName);
     } else if (buttonName > limit) {
       try {
-        const res = await fetch(`/api/products/get?${queryParams}`);
+        const res = await fetch(`${host}/api/products/get?${queryParams}`);
         const data = await res.json();
         navigate(`?${queryParams}`);
         setProducts(data.products);

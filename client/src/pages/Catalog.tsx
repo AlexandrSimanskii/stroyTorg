@@ -9,6 +9,7 @@ import Pagination from "../Components/Pagination/Pagination";
 import { useAppSelector, useAppDispatch } from "../store/redux_hooks/reduxHook";
 import { getProducts } from "../store/products/productsSlice";
 import CardSkeleton from "../Components/CardProduct/CardSkeleton";
+import { host } from "../utils/host";
 
 const Catalog = () => {
   const [products, setProducts] = useState<ProductType[]>([]);
@@ -38,7 +39,7 @@ const Catalog = () => {
       urlSearchParams.set("category", category);
       urlSearchParams.set("limit", limit.toString());
 
-      const res = await fetch(`/api/products/get?${urlSearchParams}`);
+      const res = await fetch(`${host}/api/products/get?${urlSearchParams}`);
       const data = await res.json();
       if (data.success == false) {
         console.log(data.message);
@@ -61,7 +62,7 @@ const Catalog = () => {
 
   const getMinMaxPrices = async () => {
     try {
-      const res = await fetch("/api/products/prices");
+      const res = await fetch(`${host}/api/products/prices`);
       const data = await res.json();
       setPrice(data);
     } catch (error) {

@@ -14,6 +14,7 @@ import {
   addInCartSlice,
   deleteFromCartSlice,
 } from "../../store/users/userSlise";
+import { host } from "../../utils/host";
 
 type CartTableProps = {
   cartProducts: CartProductType[];
@@ -28,7 +29,7 @@ const CartTable = ({ cartProducts, setCartProducts }: CartTableProps) => {
   const handleDeleteFromCart = async (product: CartProductType) => {
     if (user._id) {
       try {
-        const res = await fetch(`api/users/${user._id}/cart/delete`, {
+        const res = await fetch(`${host}/api/users/${user._id}/cart/delete`, {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -58,7 +59,7 @@ const CartTable = ({ cartProducts, setCartProducts }: CartTableProps) => {
   const handlePlusProduct = async (product: CartProductType) => {
     if (user._id) {
       try {
-        const res = await fetch(`api/users/${user._id}/cart/add`, {
+        const res = await fetch(`${host}/api/users/${user._id}/cart/add`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -81,7 +82,7 @@ const CartTable = ({ cartProducts, setCartProducts }: CartTableProps) => {
   const handleMinusProduct = async (product: CartProductType) => {
     if (user._id) {
       try {
-        const res = await fetch(`api/users/${user._id}/cart/add`, {
+        const res = await fetch(`{host}/api/users/${user._id}/cart/add`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

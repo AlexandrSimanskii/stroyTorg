@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { NewsType } from "../../types/types.ts";
 import NewsCard from "./NewsCard.tsx";
+import { host } from "../../utils/host.ts";
 
 const NewsComp = () => {
   const [news, setNews] = useState<NewsType[]>([]);
   const getNews = async () => {
     try {
-      const res = await fetch("/api/news/get?limit=4");
+      const res = await fetch(`${host}/api/news/get?limit=4`);
       const data = await res.json();
       setNews(data);
     } catch (error) {

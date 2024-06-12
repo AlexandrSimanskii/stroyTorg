@@ -12,6 +12,7 @@ import {
   Button,
 } from "@mui/material";
 import { useState } from "react";
+import { host } from "../../utils/host";
 
 const AsideFilter = ({
   limit,
@@ -41,7 +42,7 @@ const AsideFilter = ({
         limit: limit.toString(),
       }).toString();
 
-      const res = await fetch(`/api/products/get?${params}`);
+      const res = await fetch(`${host}/api/products/get?${params}`);
       const data = await res.json();
       navigate(`?${params}`);
       setProducts(data.products);

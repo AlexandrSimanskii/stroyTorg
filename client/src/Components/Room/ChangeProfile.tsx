@@ -7,6 +7,7 @@ import {
   useAppSelector,
   useAppDispatch,
 } from "../../store/redux_hooks/reduxHook";
+import { host } from "../../utils/host";
 
 type Inputs = {
   email: string;
@@ -33,7 +34,7 @@ const ChangeProfile = () => {
     setLoading(true);
 
     try {
-      const res = await fetch(`/api/users/${curentUser._id}/update`, {
+      const res = await fetch(`${host}/api/users/${curentUser._id}/update`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

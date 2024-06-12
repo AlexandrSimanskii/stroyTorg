@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { logOutSlise } from "../../store/users/userSlise";
 import { RxCross2 } from "react-icons/rx";
 import { useAppDispatch } from "../../store/redux_hooks/reduxHook";
+import { host } from "../../utils/host";
 type Props = {
   setLogoutVisible: React.Dispatch<React.SetStateAction<boolean>>;
 };
@@ -12,7 +13,7 @@ const ConfirmLogOut = ({ setLogoutVisible }: Props) => {
 
   const logOut = async () => {
     try {
-      const res = await fetch("/api/signout");
+      const res = await fetch(`${host}/api/signout`);
       const data = await res.json();
       if (data === "Пользователь вышел с аккаунта") {
         dispath(logOutSlise());

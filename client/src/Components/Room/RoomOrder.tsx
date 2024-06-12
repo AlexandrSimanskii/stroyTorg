@@ -3,6 +3,7 @@ import { useAppSelector } from "../../store/redux_hooks/reduxHook";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { ProductOrderType } from "../../types/types";
 import RoomPopup from "./RoomPopup";
+import { host } from "../../utils/host";
 const RoomOrder = () => {
   const [popup, setPopup] = useState(false);
   const [prod, setProd] = useState([]);
@@ -10,7 +11,7 @@ const RoomOrder = () => {
 
   const getOrder = async (item: ProductOrderType) => {
     try {
-      const res = await fetch("/api/products/get/cart", {
+      const res = await fetch(`${host}/api/products/get/cart`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ product: item.order }),

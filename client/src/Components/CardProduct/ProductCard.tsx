@@ -21,6 +21,7 @@ import {
   deleteFavoriteNotAuth,
   deleteFromCartNotAuth,
 } from "../../store/NotAuth/notAuthSlice";
+import { host } from "../../utils/host";
 
 interface CardProductProps {
   product: ProductType;
@@ -52,7 +53,7 @@ const CardProduct = ({ product }: CardProductProps) => {
   const addInFavorite = async () => {
     if (user._id) {
       try {
-        const res = await fetch("/api/users/favorite/add", {
+        const res = await fetch(`${host}/api/users/favorite/add`, {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ product_id: product._id, user_id: user._id }),
@@ -74,7 +75,7 @@ const CardProduct = ({ product }: CardProductProps) => {
   const deleteFromFavorite = async () => {
     if (user._id) {
       try {
-        const res = await fetch("/api/users/favorite/delete", {
+        const res = await fetch(`${host}/api/users/favorite/delete`, {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ user_id: user._id, product_id: product._id }),
@@ -97,7 +98,7 @@ const CardProduct = ({ product }: CardProductProps) => {
   const handleAddInCart = async () => {
     if (user._id) {
       try {
-        const res = await fetch(`/api/users/${user._id}/cart/add`, {
+        const res = await fetch(`${host}/api/users/${user._id}/cart/add`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -122,7 +123,7 @@ const CardProduct = ({ product }: CardProductProps) => {
   const handleDeleteFromCart = async () => {
     if (user._id) {
       try {
-        const res = await fetch(`/api/users/${user._id}/cart/delete`, {
+        const res = await fetch(`${host}/api/users/${user._id}/cart/delete`, {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

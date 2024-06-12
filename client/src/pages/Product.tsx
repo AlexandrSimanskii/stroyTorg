@@ -14,6 +14,7 @@ import {
   addInCartSlice,
   deleteFromCartSlice,
 } from "../store/users/userSlise";
+import { host } from "../utils/host";
 
 const Product = () => {
   const [count, setCount] = useState(1);
@@ -27,7 +28,7 @@ const Product = () => {
 
   const getSimilarProduct = async (el: string) => {
     try {
-      const res = await fetch(`/api/products/get?type=${el}`);
+      const res = await fetch(`${host}/api/products/get?type=${el}`);
       const data = await res.json();
       setSimilarProduct(data.products);
     } catch (error) {
@@ -36,7 +37,7 @@ const Product = () => {
   };
   const getProduct = async () => {
     try {
-      const res = await fetch(`/api/products/get/${params.id}`);
+      const res = await fetch(`${host}/api/products/get/${params.id}`);
       const data = await res.json();
       setProduct(data);
 
@@ -58,7 +59,7 @@ const Product = () => {
   const addInFavorite = async () => {
     if (user._id) {
       try {
-        const res = await fetch("/api/users/favorite/add", {
+        const res = await fetch(`${host}/api/users/favorite/add`, {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ product_id: params.id, user_id: user._id }),
@@ -79,7 +80,7 @@ const Product = () => {
   };
   const deleteFromFavorite = async () => {
     try {
-      const res = await fetch("/api/users/favorite/delete", {
+      const res = await fetch(`${host}/api/users/favorite/delete`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ user_id: user._id, product_id: params.id }),
@@ -101,7 +102,7 @@ const Product = () => {
     console.log(user._id);
 
     try {
-      const res = await fetch(`/api/users/${user._id}/cart/add`, {
+      const res = await fetch(`${host}/api/users/${user._id}/cart/add`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -122,7 +123,7 @@ const Product = () => {
   };
   const handleDeleteFromCart = async () => {
     try {
-      const res = await fetch(`/api/users/${user._id}/cart/delete`, {
+      const res = await fetch(`${host}/api/users/${user._id}/cart/delete`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

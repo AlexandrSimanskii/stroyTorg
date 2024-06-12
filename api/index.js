@@ -13,7 +13,7 @@ const app = express();
 dotenv.config();
 
 mongoose
-  .connect(process.env.MONGO)
+  .connect("mongodb+srv://StroyOptTorg:StroyOptTorg@cluster0.tzfh0vd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
   .then(() => {
     console.log("Connect with MongoDB");
   })

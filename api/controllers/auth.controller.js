@@ -18,7 +18,7 @@ export const signUp = async (req, res, next) => {
   });
 
   try {
-    const token = jwt.sign({ id: newUser.id }, process.env.JWT_SECRET);
+    const token = jwt.sign({ id: newUser.id }, "4jd93sddx4");
     await newUser.save();
     const { password, ...rest } = newUser._doc;
     res
@@ -41,7 +41,7 @@ export const signIn = async (req, res, next) => {
     if (!validPassword) {
       return next(errorHandler(401, "Почта и пароль не совпадают"));
     }
-    const token = jwt.sign({ id: validUser._id }, process.env.JWT_SECRET);
+    const token = jwt.sign({ id: validUser._id }, "4jd93sddx4");
     const { password: pass, ...rest } = validUser._doc;
     res
       .cookie("access_token", token, { httpOnly: true })

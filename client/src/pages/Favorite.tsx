@@ -25,7 +25,7 @@ const Favorite = () => {
   const getFavoriteProducts = async () => {
     try {
       setLoading(true);
-      const res = await fetch(`${host}api/products/favorite/get`, {
+      const res = await fetch(`${host}/api/products/favorite/get`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

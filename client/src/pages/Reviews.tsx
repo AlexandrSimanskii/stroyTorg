@@ -3,6 +3,7 @@ import SideBar from "../Components/SideBar/SideBar";
 import Pagination from "../Components/Pagination/Pagination";
 import Form from "../Components/Contacts/ContactsForm";
 import { ReviewType } from "../types/types";
+import { host } from "../utils/host";
 
 const Reviews = () => {
   const [isSortActive, setIsSortActive] = useState(true);
@@ -32,7 +33,7 @@ const Reviews = () => {
 
   const getReviews = async () => {
     const res = await fetch(
-      `/api/review/get?order=${order}&startIndex=${startIndex}`
+      `${host}/api/review/get?order=${order}&startIndex=${startIndex}`
     );
     const data = await res.json();
     setReviews(data.review);

@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import cors from "cors"
 import cookieParser from "cookie-parser";
 import productRouter from "./routes/product.router.js";
 import newsRouter from "./routes/news.router.js";
@@ -19,13 +20,17 @@ mongoose
   })
   .catch((err) => console.log("Не удалось подключиться к MongoDB", err));
 const PORT = process.env.PORT || 3004;
-
+const CORS_ORIGIN = process.env.CORS_ORIGIN || "https://stroy-torg.vercel.app/";
 
 app.listen(PORT, () => {
   console.log("Server is running on port 3004");
 });
 
 
+app.use(cors({
+  origin: CORS_ORIGIN,
+  credentials: true,
+}));
 
 
 app.use(cookieParser());

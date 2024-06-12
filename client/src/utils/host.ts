@@ -1,1 +1,1 @@
-export const host = "https://stroy-torg-iqpe.vercel.app/"
+export const host = "https://stroy-torg-r23n.vercel.app"

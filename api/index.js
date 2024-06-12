@@ -30,6 +30,9 @@ app.listen(PORT, () => {
 
 app.use(cookieParser());
 app.use(express.json());
+app.get("/api/a",(req,res)=>{
+  res.json({mess:"привэт"})
+})
 app.use("/api", authRouter);
 app.use("/api/users", usersRouter);
 app.use("/api/products", productRouter);

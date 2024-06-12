@@ -1,0 +1,34 @@
+.similar {
+  &-slider {
+    height: 400px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    --swiper-navigation-color: rgb(0, 0, 0);
+    --swiper-navigation-size: 16px;
+    & .similar-swiper-btn {
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      background-color: rgb(245, 245, 245);
+    }
+  }
+  &-navigation {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 3;
+  }
+}
+.similar-swiper-slide {
+  .card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

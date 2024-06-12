@@ -1,0 +1,230 @@
+.product {
+  &-images {
+    display: flex;
+    width: 100%;
+    gap: 30px;
+  }
+  &-inform {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    height: 544px;
+    margin-bottom: 50px;
+  }
+  &-params {
+    margin-bottom: 20px;
+    border-radius: 6px;
+    background-color: hsl(0, 0%, 100%);
+    &__dd {
+      color: $card-color;
+    }
+    &__group {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 28px;
+    }
+
+    &-block {
+      min-width: 400px;
+      padding: 10px;
+    }
+    &__btn {
+      padding: 0;
+      border-radius: 1px;
+      color: $theme-color;
+      background-color: transparent;
+      margin-bottom: 16px;
+      border-bottom: 1px dashed $theme-color;
+    }
+    &__doted {
+      border-top: 1px dashed $card-color;
+      height: 1px;
+      flex-grow: 1;
+      margin: 0 10px;
+    }
+  }
+  & .info {
+    border: 1px solid $light-border-color;
+    padding: 20px;
+    border-radius: 6px;
+    width: 100%;
+    margin-top: 40px;
+    &__inner {
+      margin: 0;
+      gap: 37px;
+      flex-direction: column;
+    }
+    &-item {
+      width: 100%;
+
+      font-weight: 550;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      justify-content: flex-start;
+      text-align: center;
+
+      &:not(:last-child) {
+        border-right: none;
+      }
+
+      &:last-child {
+        justify-content: left;
+      }
+    }
+  }
+  &-box {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.add-cart {
+  max-width: 361px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  padding: 25px;
+  &-box {
+    padding-top: 14 px;
+    display: flex;
+    gap: 10px;
+  }
+  &__regular {
+    text-decoration: line-through;
+    color: #8f9296;
+    padding-top: 4px;
+  }
+  &__discount {
+    padding-top: 4px;
+    font-size: 30px;
+    color: #003b73;
+  }
+  &__added {
+    margin-top: 20px;
+    background-color: $theme-color;
+    color: $font-color;
+    &--active {
+      background-color: $btn-color;
+    }
+  }
+  &__pay {
+    background-color: $light-border-color;
+    color: $theme-color;
+  }
+  &__sale {
+    background-color: $sale-color;
+    display: flex;
+    align-items: center;
+    padding: 3px 7px;
+    border-radius: 4px;
+    color: $font-color;
+    font-size: 11px;
+    font-weight: 700;
+    height: 16px;
+  }
+  &-bottom {
+    display: flex;
+    align-items: center;
+    column-gap: 6px;
+    &__heart {
+      border: 1px solid $light-border-color;
+      border-radius: 4px;
+      width: 40px;
+      height: 40px;
+      padding: 10px;
+      &--active {
+        color: red;
+        border-color: red;
+      }
+    }
+  }
+}
+.count-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 25px;
+  height: 28px;
+  &-box {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    &__brand {
+      color: #787c80;
+      font-size: 14px;
+    }
+  }
+  &__btn {
+    padding: 10px 25px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+}
+
+.product-swiper {
+  display: flex;
+  gap: 20px;
+}
+.product-slider {
+  width: 500px;
+  height: 100%;
+  overflow: hidden;
+  &-img {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+.product-thumbs {
+  width: 100px;
+  overflow: hidden;
+  position: relative;
+  &__gradient {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    height: 60px;
+    transform: translate(-50%);
+    background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.95) 40%,
+      transparent
+    );
+    z-index: 2;
+  }
+  &-img {
+    width: 97px;
+    height: 74px;
+    background-size: contain;
+    background-position: center;
+  }
+  & .swiper-slide-thumb-active {
+    width: 100%;
+    border: 3px solid $theme-color;
+    border-radius: 4px;
+  }
+  &-btn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 3;
+    font-size: 20px;
+  }
+}
+.tab-params {
+  height: 280px;
+  margin-bottom: 40px !important;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  column-gap: 90px;
+  row-gap: 8px;
+}

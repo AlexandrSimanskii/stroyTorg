@@ -1,0 +1,14 @@
+.paiment {
+  padding-top: 30px;
+  margin-bottom: 110px;
+  line-height: 27px;
+  & ol {
+    list-style-type: none;
+  }
+  h4 {
+    margin: 30px 0 10px;
+  }
+  &-text {
+    margin-bottom: 20px;
+  }
+}

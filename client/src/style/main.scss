@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Helvetica Neue Cyr Medium Italic", sans-serif;
+}
+$theme-color: rgb(24, 111, 212);
+$second-theme-color: rgb(238, 9, 6);
+$btn-color: rgb(1, 17, 32);
+$card-color: rgb(143, 146, 150);
+$border-color: rgb(223, 224, 226);
+$light-border-color: #edf0f2;
+$font-color: rgb(255, 255, 255);
+$sale-color: rgb(27, 150, 101);
+main {
+  position: relative;
+}
+ul {
+  list-style-type: none;
+  list-style-position: inside;
+}
+.ul-type-disc {
+  list-style-type: disc;
+  font-size: 15px;
+  padding: 20px 15px;
+  li::marker {
+    color: red;
+  }
+}
+ol {
+  list-style-position: inside;
+}
+a {
+  color: $btn-color;
+  text-decoration: none;
+  &:visited {
+    color: inherit;
+  }
+}
+h1 {
+  font-size: 48px;
+}
+h2 {
+  font-size: 32px;
+  font-weight: 700;
+}
+h4 {
+  font-size: 20px;
+  font-weight: 550px;
+}
+h5 {
+  font-weight: 700px;
+}
+button {
+  padding: 24px 27px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.container {
+  max-width: 1660px;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+textarea {
+  resize: none;
+  &::placeholder {
+    color: #adb1b7;
+    font-size: 16px;
+  }
+}
+.outlet {
+  min-height: 400px;
+  flex-grow: 1;
+}
+input::placeholder {
+  color: #adb1b7;
+}
+thead {
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+tr {
+  border-top: 2px solid $light-border-color;
+  border-bottom: 2px solid $light-border-color;
+  border-radius: 10px;
+}
+th {
+  text-align: start;
+  padding: 20px;
+  text-wrap: nowrap;
+}
+td {
+  padding: 20px;
+}
+
+@import "about";
+@import "accardion";
+@import "advertisingCard";
+@import "aside";
+@import "cardProduct";
+@import "cart";
+@import "catalog";
+@import "checkOut";
+@import "confirmLogOut";
+@import "contact";
+@import "delivery";
+@import "favorite";
+@import "footer";
+@import "form";
+@import "fonts";
+@import "header";
+@import "home";
+@import "homeSliders";
+@import "newsCard";
+@import "notFound";
+@import "paymentPage";
+@import "product";
+@import "register";
+@import "return";
+@import "reviews";
+@import "room";
+@import "infoBlock";
+@import "sideBar";
+@import "similarSlider";
+@import "sortForm";
+@import "pagination";

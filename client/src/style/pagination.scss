@@ -1,0 +1,33 @@
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  &-item {
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid $border-color;
+  }
+  &-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 19px 24px;
+    background: transparent;
+    &--active {
+      font-weight: bold;
+      background-color: $btn-color;
+      color: white;
+      border-radius: 5px;
+    }
+  }
+}
+@media (max-width: 640px) {
+  .pagination-btn--hide {
+    display: none;
+  }
+  .pagination-btn {
+    padding: 10px 12px;
+  }
+}

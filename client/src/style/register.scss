@@ -1,0 +1,81 @@
+.register {
+  margin-top: 30px;
+  &-content {
+    margin-top: 20px;
+    border: 1px solid $light-border-color;
+    border-radius: 8px;
+    display: flex;
+    padding: 40px;
+    column-gap: 70px;
+  }
+  &-account {
+    position: relative;
+    height: fit-content;
+    width: 100%;
+    padding-left: 117px;
+    border-left: 1px solid $light-border-color;
+    &::after {
+      content: url("/images/icons/register_user.svg");
+      position: absolute;
+      left: 50px;
+      top: 0;
+    }
+    &__title {
+      margin-bottom: 32px;
+    }
+    &__text {
+      display: flex;
+      flex-direction: column;
+      row-gap: 16px;
+      margin-bottom: px;
+    }
+    &__btn {
+      border-radius: 6px;
+      background-color: $btn-color;
+      color: $font-color;
+      padding: 16px;
+      margin-top: 20px;
+    }
+  }
+}
+.signin-auth-btn {
+  background-color: $theme-color;
+  color: $font-color;
+  &--disabled {
+    background-color: $light-border-color;
+    color: $btn-color;
+  }
+}
+@media (max-width: 1260px) {
+  .register {
+    &-account {
+      margin-top: 20px;
+    }
+    &-content {
+      column-gap: 20px;
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  .register-content {
+    flex-direction: column;
+  }
+}
+@media (max-width: 400px) {
+  .register {
+    &-account {
+      padding-left: 60px;
+
+      &::after {
+        content: url("/images/icons/register_user.svg");
+        position: absolute;
+        left: 10px;
+        top: 0;
+      }
+    }
+  }
+  .register-content {
+    padding: 16px;
+  }
+}

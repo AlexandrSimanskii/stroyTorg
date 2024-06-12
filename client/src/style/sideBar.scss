@@ -1,0 +1,59 @@
+.bar {
+  width: 331px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  &-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &-form {
+    padding: 30px 25px;
+    background-color: #f9fafb;
+    display: flex;
+    flex-direction: column;
+    row-gap: 13px;
+    text-align: center;
+    input {
+      padding: 25px 20px;
+      border-radius: 7px;
+    }
+    &__title {
+      font-size: 18px;
+      font-weight: 550;
+    }
+    &__text {
+      font-size: 14px;
+      color: #6a6f75;
+    }
+    &__btn {
+      background-color: $theme-color;
+      color: $font-color;
+    }
+    &__agreement {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    input[type="checkbox"] {
+      width: 50px;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .bar {
+    width: 100%;
+    &-cards {
+      flex-direction: row;
+    }
+  }
+}
+@media (max-width: 640px) {
+  .bar {
+    align-items: center;
+    &-cards {
+      flex-direction: column;
+    }
+  }
+}

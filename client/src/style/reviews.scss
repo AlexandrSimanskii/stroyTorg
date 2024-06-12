@@ -1,0 +1,128 @@
+.reviews {
+  padding-top: 30px;
+  &-cards {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    margin: 40px 0 60px;
+  }
+  &-sort {
+    display: flex;
+    gap: 20px;
+    &__btn {
+      background-color: F2F4F5;
+      color: #5b5b5c;
+      &--active {
+        background-color: #f6f8fb;
+        color: $theme-color;
+      }
+    }
+  }
+  .reviews-files {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    &__error {
+      color: red;
+    }
+  }
+  &-file {
+    text-align: center;
+    color: #adb1b7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 8px;
+    width: 100%;
+    border: 1px dashed $border-color;
+    padding: 40px 20px;
+    border-radius: 8px;
+    &--active {
+      color: #adb1b7;
+      display: flex;
+      gap: 10px;
+      height: 180px;
+
+      width: 100%;
+      border: 1px dashed $border-color;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    &__img {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      border-radius: 4px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      text-align: right;
+
+      color: $font-color;
+    }
+    &__gradient {
+      display: flex;
+      justify-content: right;
+      align-items: start;
+      padding: 5px;
+      position: absolute;
+      width: 100%;
+      height: 50px;
+      left: 0;
+      top: 0;
+      background-image: linear-gradient(
+        0deg,
+        hsla(0, 0%, 35.29%, 0) 0%,
+        hsla(0, 0%, 34.53%, 0.034375) 16.36%,
+        hsla(0, 0%, 32.42%, 0.125) 33.34%,
+        hsla(0, 0%, 29.18%, 0.253125) 50.1%,
+        hsla(0, 0%, 24.96%, 0.4) 65.75%,
+        hsla(0, 0%, 19.85%, 0.546875) 79.43%,
+        hsla(0, 0%, 13.95%, 0.675) 90.28%,
+        hsla(0, 0%, 7.32%, 0.765625) 97.43%,
+        hsla(0, 0%, 0%, 0.8) 100%
+      );
+    }
+    &__remove {
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.3);
+        transition: 200ms;
+        color: red;
+      }
+    }
+    &__btn {
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;
+      color: white;
+    }
+  }
+}
+
+.review-card {
+  border: 1px solid $border-color;
+  padding: 25px;
+  border-radius: 8px;
+  &__name {
+    font-size: 19px;
+    font-weight: 550;
+  }
+  &__date {
+    color: #60656c;
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+  &__comment {
+    line-height: 26px;
+    margin-bottom: 20px;
+  }
+  &__image {
+    margin-right: 10px;
+    height: 111px;
+    width: 197px;
+  }
+}

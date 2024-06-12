@@ -1,0 +1,237 @@
+.footer {
+  position: relative;
+  z-index: 10;
+  background-color: rgba(243, 244, 245, 1);
+  &-top {
+    padding: 41px 0;
+    border-bottom: 1px solid rgba(220, 225, 231, 1);
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &__call {
+      display: flex;
+
+      gap: 34px;
+    }
+    &__phone {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    &__btn {
+      padding: 18px 47px;
+
+      border: 1px solid $second-theme-color;
+      border-radius: 4px;
+      transition: 1s;
+      color: $btn-color;
+    }
+    &__naming-text {
+      transform: translateX(-40px);
+    }
+  }
+  &-main {
+    padding: 20px;
+    margin-bottom: 41px;
+    border-bottom: 1px solid rgba(220, 225, 231, 1);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-content: space-between;
+    row-gap: 20px;
+    &-list {
+      &-name {
+        font-size: 18px;
+        font-weight: 550;
+        margin: 10px 0;
+      }
+      &-arrow {
+        display: none;
+      }
+      &__info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px 74px;
+      }
+      &__catalog {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr 1fr;
+
+        gap: 15px 74px;
+      }
+    }
+  }
+  &-additional {
+    border-bottom: 1px solid rgba(220, 225, 231, 1);
+    padding-bottom: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 180px;
+    &-payments {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      color: rgba(151, 157, 163, 1);
+
+      &-list {
+        display: flex;
+        justify-content: space-between;
+        flex-basis: 542px;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      &__img {
+        opacity: 0.4;
+      }
+    }
+    &-subscription {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-basis: 692px;
+      column-gap: 36px;
+      font-size: 17px;
+      font-weight: 550;
+      gap: 20px;
+    }
+  }
+  &-form {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+
+    &__input {
+      outline: none;
+      border: none;
+    }
+  }
+  &-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    color: rgba(129, 134, 139, 1);
+  }
+}
+
+@media (max-width: 1260px) {
+  .footer {
+    font-size: 14px;
+    &-main {
+      grid-template-columns: 1fr 1fr;
+
+      &-list__catalog {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    &-top {
+      &-btn {
+        padding: 15px 18px;
+      }
+      &__phone {
+        align-items: end;
+        text-wrap: nowrap;
+      }
+
+      &__inform-inn {
+        display: none;
+      }
+      &__naming-text {
+        display: none;
+      }
+      &__naming-img {
+        max-width: 160px;
+      }
+    }
+    &-additional {
+      flex-direction: column;
+      row-gap: 20px;
+      &-payments {
+        max-width: none;
+        justify-content: space-between;
+        &-title {
+          display: none;
+        }
+        &-list {
+          flex-basis: 100%;
+        }
+      }
+      &-subscription {
+        flex-basis: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .footer-bottom__developer-text {
+    order: 1;
+  }
+}
+
+@media (max-width: 760px) {
+  .footer {
+    &-top {
+      &__call {
+        flex-grow: 1;
+        justify-content: space-between;
+        column-gap: 10px;
+      }
+      &__btn {
+        color: $btn-color;
+        padding: 15px 18px;
+      }
+    }
+
+    &-main {
+      grid-template-columns: 1fr;
+      gap: 0px;
+      padding: 0;
+      &-group {
+        border-bottom: 1px solid rgba(220, 225, 231, 1);
+        &__box {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+      &-list {
+        padding: 0;
+
+        &__info {
+          display: none;
+        }
+        &__catalog {
+          display: none;
+        }
+        &-arrow {
+          display: block;
+        }
+      }
+    }
+
+    &-additional {
+      &-payments {
+        padding: 0 24px;
+      }
+      &-subscription {
+        flex-direction: column;
+        width: 100%;
+      }
+    }
+    &-form {
+      width: 100%;
+    }
+  }
+}

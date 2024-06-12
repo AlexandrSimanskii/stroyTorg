@@ -130,7 +130,7 @@ const Header = () => {
             <div className="header-bottom__group">
               <Link to={"/catalog"}>
                 <button className=" header-bottom__btn ">
-                  <img src="../../public/images/icons/menu.svg" alt="" />{" "}
+                  <img src="/images/icons/menu.svg" alt="menu" />{" "}
                   Каталог
                 </button>{" "}
               </Link>
@@ -143,8 +143,8 @@ const Header = () => {
                 />
                 <img
                   className="header-search-img"
-                  src="../../public/images/icons/search.svg"
-                  alt=""
+                  src="/images/icons/search.svg"
+                  alt="search"
                 />
               </form>
             </div>

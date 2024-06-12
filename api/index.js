@@ -20,7 +20,7 @@ mongoose
   })
   .catch((err) => console.log("Не удалось подключиться к MongoDB", err));
 const PORT = process.env.PORT || 3004;
-const CORS_ORIGIN = process.env.CORS_ORIGIN || "https://stroy-torg.vercel.app/";
+const CORS_ORIGIN = process.env.CORS_ORIGIN || "https://stroy-torg.vercel.app";
 
 app.listen(PORT, () => {
   console.log("Server is running on port 3004");
